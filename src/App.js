@@ -1,99 +1,108 @@
-import { useState } from "react";
-import "./App.css";
-
-import Layout from "./components/layout/Layout";
-import Header from "./components/header/Header";
-import Form from "./components/form/Form";
-import List from "./components/list/List";
-import Pages from "./components/list/List";
-import Todo from "./components/todo/Todo";
+import React from "react";
+import TodoList from "./pages/TodoList";
 
 function App() {
-	const [title, setTitle] = useState("");
-	const [content, setContent] = useState("");
-	const [todos, setTodos] = useState([
-		{
-			id: 1,
-			title: "react를 배워봅시다.",
-			content: "어쩔티비~",
-		},
-	]);
-
-	// function del() {
-	// 	fetch(`http://localhost:3000/`),
-	// 		{
-	// 			method: "DELETE",
-	// 		};
-	// }
-
-	return (
-		<div className="container">
-			<input
-				type="text"
-				value={title}
-				onChange={(event) => {
-					setTitle(event.target.value);
-				}}
-			/>
-			<input
-				type="text"
-				value={content}
-				onChange={(event) => {
-					setContent(event.target.value);
-				}}
-			/>
-			<button
-				onClick={() => {
-					setTodos([
-						...todos,
-						{ id: todos.length + 1, title: title, content: content },
-					]);
-				}}
-			>
-				추가하기
-			</button>
-
-			<div>
-				<h1>Working</h1>
-
-				<div className="todos-container">
-					{todos.map((todo) => (
-						<div className="todo">
-							<div className="todo_title" key={todo.id}>
-								{todo.title}
-							</div>
-							<div className="todo_content" key={todo.id}>
-								{todo.content}
-							</div>
-							<button className="btn_del">삭제</button>
-							<button>완료</button>
-						</div>
-					))}
-				</div>
-			</div>
-
-			<div>
-				<h1>Done</h1>
-				<div className="todos-container">
-					{todos.map((todo) => (
-						<div className="todo">
-							<div className="todo_title" key={todo.id}>
-								{todo.title}
-							</div>
-							<div className="todo_content" key={todo.id}>
-								{todo.content}
-							</div>
-							<button>삭제</button>
-							<button>취소</button>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-	);
+	return <TodoList />;
 }
 
 export default App;
+
+// import { useState } from "react";
+// import "./App.css";
+
+// import Layout from "./components/layout/Layout";
+// import Header from "./components/header/Header";
+// import Form from "./components/form/Form";
+// import List from "./components/list/List";
+// import Pages from "./components/list/List";
+// import Todo from "./components/todo/Todo";
+
+// function App() {
+// 	const [title, setTitle] = useState("");
+// 	const [content, setContent] = useState("");
+// 	const [todos, setTodos] = useState([
+// 		{
+// 			id: 1,
+// 			title: "react를 배워봅시다.",
+// 			content: "어쩔티비~",
+// 		},
+// 	]);
+
+// 	// function del() {
+// 	// 	fetch(`http://localhost:3000/`),
+// 	// 		{
+// 	// 			method: "DELETE",
+// 	// 		};
+// 	// }
+
+// 	return (
+// 		<div className="container">
+// 			<input
+// 				type="text"
+// 				value={title}
+// 				onChange={(event) => {
+// 					setTitle(event.target.value);
+// 				}}
+// 			/>
+// 			<input
+// 				type="text"
+// 				value={content}
+// 				onChange={(event) => {
+// 					setContent(event.target.value);
+// 				}}
+// 			/>
+// 			<button
+// 				onClick={() => {
+// 					setTodos([
+// 						...todos,
+// 						{ id: todos.length + 1, title: title, content: content },
+// 					]);
+// 				}}
+// 			>
+// 				추가하기
+// 			</button>
+
+// 			<div>
+// 				<h1>Working</h1>
+
+// 				<div className="todos-container">
+// 					{todos.map((todo) => (
+// 						<div className="todo">
+// 							<div className="todo_title" key={todo.id}>
+// 								{todo.title}
+// 							</div>
+// 							<div className="todo_content" key={todo.id}>
+// 								{todo.content}
+// 							</div>
+// 							<button className="btn_del">삭제</button>
+// 							<button>완료</button>
+// 						</div>
+// 					))}
+// 				</div>
+// 			</div>
+
+// 			<div>
+// 				<h1>Done</h1>
+// 				<div className="todos-container">
+// 					{todos.map((todo) => (
+// 						<div className="todo">
+// 							<div className="todo_title" key={todo.id}>
+// 								{todo.title}
+// 							</div>
+// 							<div className="todo_content" key={todo.id}>
+// 								{todo.content}
+// 							</div>
+// 							<button>삭제</button>
+// 							<button>취소</button>
+// 						</div>
+// 					))}
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// }
+
+// export default App;
 
 // import { useState } from 'react'
 

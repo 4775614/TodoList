@@ -1,0 +1,17 @@
+.list-container {
+    padding: 0 24px;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px;
+    align-content: space-between;
+    margin-bottom: 40px;
+}
+
+.line {
+    border-style: none;
+    margin: 0 0 55px s0;
+    border-top: 1px solid #e5e5e5;
+}
