@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../redux/module/todos';
 import "./style.css";
 
 function Form({ setTodos, todos }) {
@@ -8,6 +11,9 @@ function Form({ setTodos, todos }) {
     body: "",
     isDone: false,
   };
+  const sona = useSelector((state)=>state.todos.todos);
+  console.log(sona)
+  const dispatch = useDispatch();
 
   const [todo, setTodo] = useState(initialState);
   const onChangeHandler = (event) => {
@@ -17,7 +23,8 @@ function Form({ setTodos, todos }) {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    setTodos([...todos, todo]);
+    dispatch(addTodo({...todo}));
+    setTodos([...todos, todo]); //추가하는 줄
     setTodo(initialState);
   };
 
