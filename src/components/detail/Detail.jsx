@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-// import "./style.css";
+import "./style.css";
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux' 
 import { useNavigate } from 'react-router-dom'
@@ -14,12 +14,15 @@ export default function Detail() {
   console.log(copy)
 
     return (
-  <div>
-    <div>상세페이지 입니다. </div>
-    <div>{copy.title}</div>
-    <div>{copy.body}</div>   
-    <div>{copy.id}</div>   
-    <button onClick={()=>navigate("/")}>zz</button>
-  </div>
-)
+      <div className='detailwrap'>
+          <div className="detail">
+              <div className='detail.cont'>
+                  <div className='ID'>ID:{copy.id}</div>   
+                  <div className='title'>{copy.title}</div>
+                  <div className='body'>{copy.body}</div>   
+                  <button onClick={()=>navigate("/")}>이전으로</button>
+              </div>
+          </div>
+      </div>
+  )
 }
